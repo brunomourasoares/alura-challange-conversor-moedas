@@ -19,46 +19,44 @@ Um conversor de moedas moderno, interativo e profissional para terminal, desenvo
 - Uma conta gratuita na [Exchange Rate API](https://www.exchangerate-api.com/) para obter sua API key
 
 ## Instalação
-
-1. **Clone o repositório:**
-HTTPS:
-```sh
-  git clone https://github.com/brunomourasoares/alura-challange-conversor-moedas.git
-  cd alura-challange-conversor-moedas
-```
-SSH:
-```sh
-  git clone git@github.com:brunomourasoares/alura-challange-conversor-moedas.git
-  cd alura-challange-conversor-moedas
-```
-
+1. **Clone o repositório:**  
+    HTTPS:
+    ```sh
+      git clone https://github.com/brunomourasoares/alura-challange-conversor-moedas.git
+      cd alura-challange-conversor-moedas
+    ```
+    SSH:
+    ```sh
+      git clone git@github.com:brunomourasoares/alura-challange-conversor-moedas.git
+      cd alura-challange-conversor-moedas
+    ```
 2. **Configure sua API key:**
    - Edite o arquivo `src/main/resources/application.properties` e coloque sua chave:
-     ```properties
-     exchange.rate.api.key=SUA_API_KEY_AQUI
-     ```
-
-2. **Compile o projeto:**
-```sh
-  mvn clean package
-```
+    ```properties
+      exchange.rate.api.key=SUA_API_KEY_AQUI
+    ```
+3. **Compile o projeto:**
+    ```sh
+      mvn clean package
+    ```
 
 4. **Execute a aplicação:**
-- **Via Maven (recomendado):**
-```sh
-  mvn exec:java
-```
-- **Via JAR compilado:**
-```sh
-  java -jar target/conversor-1.0-SNAPSHOT.jar
-```
+   - **Via Maven (recomendado):**
+    ```sh
+    mvn exec:java
+    ```
+    - **Via JAR compilado:**
+    ```sh
+      java -jar target/conversor-1.0-SNAPSHOT.jar
+    ```
 (Verifique o nome do arquivo `.jar` na pasta `target/` se for diferente)
 
 ## Como usar
 - Escolha a opção desejada no menu:
-  - **1- Converter moedas:** Uma lista de moedas será exibida. Escolha a de origem e a de destino pelo número, digite o valor e veja o resultado formatado.
-  - **2- Exibir histórico:** Visualize todas as conversões já realizadas, com data/hora, moedas, valores e taxa.
-  - **3- Sair:** Encerra o programa.
+
+  **1- Converter moedas:** Uma lista de moedas será exibida. Escolha a de origem e a de destino pelo número, digite o valor e veja o resultado formatado.  
+  **2- Exibir histórico:** Visualize todas as conversões já realizadas, com data/hora, moedas, valores e taxa.  
+  **3- Sair:** Encerra o programa.
 
 ## Histórico Persistente
 - Todas as conversões são salvas automaticamente no arquivo `src/main/resources/historico-conversoes.csv`.
