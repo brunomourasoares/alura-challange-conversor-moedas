@@ -79,7 +79,6 @@ public class ServicoTaxaCambio {
 
             }
         } catch (IOException e) {
-            // Ignora, vai lançar erro abaixo se não encontrar
         }
 
         throw new RuntimeException("API key não encontrada. Defina a variável de ambiente EXCHANGE_RATE_API_KEY ou configure em src/main/resources/application.properties (exchange.rate.api.key)");
