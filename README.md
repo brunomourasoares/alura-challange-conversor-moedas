@@ -29,7 +29,7 @@ Um conversor de moedas moderno, interativo e profissional para terminal, desenvo
     ```sh
       git clone git@github.com:brunomourasoares/alura-challange-conversor-moedas.git
       cd alura-challange-conversor-moedas
-    ```
+    ``` 
 2. **Configure sua API key:**
    - Edite o arquivo `src/main/resources/application.properties` e coloque sua chave:
     ```properties
