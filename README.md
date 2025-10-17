@@ -5,7 +5,9 @@ Um conversor de moedas moderno, interativo e profissional para terminal, desenvo
 ## Funcionalidades
 - Conversão entre várias moedas (USD, BRL, EUR, GBP, JPY, CHF, CAD, AUD, CNY, MXN, ARS, COP, entre outras)
 - Histórico de conversões com data/hora, valores, moedas e taxa utilizada
-- Histórico persistente: todas as conversões são salvas no arquivo `historico-conversoes.csv`
+- Histórico persistente: todas as conversões são salvas no arquivo `historico-conversoes.csv` na pasta `src/main/resources`
+- Consulta ao histórico a qualquer momento
+- Uso da Exchange Rate API para obter taxas de câmbio atualizadas
 - Formatação monetária correta para cada moeda
 - Registro de logs de conversão usando `java.time`
 - Menu interativo e fácil de usar

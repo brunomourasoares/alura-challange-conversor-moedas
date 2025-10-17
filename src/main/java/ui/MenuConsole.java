@@ -21,23 +21,26 @@ public class MenuConsole {
     private static final String ARQUIVO_HISTORICO = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "historico-conversoes.csv";
     private final ServicoTaxaCambio servico;
     private final List<ConversaoLog> historico = new ArrayList<>();
-    private final Map<String, String> moedasSuportadas = Map.ofEntries(
-        Map.entry("USD", "Dólar Americano"),
-        Map.entry("BRL", "Real Brasileiro"),
-        Map.entry("ARS", "Peso Argentino"),
-        Map.entry("COP", "Peso Colombiano"),
-        Map.entry("EUR", "Euro"),
-        Map.entry("GBP", "Libra Esterlina"),
-        Map.entry("JPY", "Iene Japonês"),
-        Map.entry("CHF", "Franco Suíço"),
-        Map.entry("CAD", "Dólar Canadense"),
-        Map.entry("AUD", "Dólar Australiano"),
-        Map.entry("CNY", "Yuan Chinês"),
-        Map.entry("MXN", "Peso Mexicano")
-    );
+    private final Map<String, String> moedasSuportadas;
 
     public MenuConsole(ServicoTaxaCambio servico) {
         this.servico = servico;
+
+        // Usando TreeMap para garantir a ordem alfabética das chaves (códigos das moedas)
+        this.moedasSuportadas = new TreeMap<>();
+        this.moedasSuportadas.put("USD", "Dólar Americano");
+        this.moedasSuportadas.put("BRL", "Real Brasileiro");
+        this.moedasSuportadas.put("ARS", "Peso Argentino");
+        this.moedasSuportadas.put("COP", "Peso Colombiano");
+        this.moedasSuportadas.put("EUR", "Euro");
+        this.moedasSuportadas.put("GBP", "Libra Esterlina");
+        this.moedasSuportadas.put("JPY", "Iene Japonês");
+        this.moedasSuportadas.put("CHF", "Franco Suíço");
+        this.moedasSuportadas.put("CAD", "Dólar Canadense");
+        this.moedasSuportadas.put("AUD", "Dólar Australiano");
+        this.moedasSuportadas.put("CNY", "Yuan Chinês");
+        this.moedasSuportadas.put("MXN", "Peso Mexicano");
+
         carregarHistoricoDeArquivo();
     }
 
@@ -65,6 +68,7 @@ public class MenuConsole {
     private void realizarConversaoDinamica() {
         System.out.println("Moedas disponíveis:");
         int idx = 1;
+        // A lista de códigos já virá ordenada do TreeMap
         List<String> codigos = new ArrayList<>(moedasSuportadas.keySet());
         for (String codigo : codigos) {
             System.out.printf("%d - %s (%s)\n", idx++, moedasSuportadas.get(codigo), codigo);
